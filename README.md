@@ -66,4 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # docker-react
+
+This is a series of scripts that push to Travis-CI and then run other commands to test and deploy the code.
