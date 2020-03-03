@@ -10,6 +10,9 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
+  "//": {
+    "travis-build": "- docker run -e CI=true noman2000/docker-react yarn test"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

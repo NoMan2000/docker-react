@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -f Dockerfile.dev -t noman2000/docker-react .
+
+script:
+  - docker run -e CI=true noman2000/docker-react yarn test --coverage
