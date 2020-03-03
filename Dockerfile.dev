@@ -1,0 +1,15 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+RUN apk add --update yarn
+RUN apk add --update htop
+RUN apk add --update curl
+
+COPY package.json .
+
+RUN yarn
+# Not necessary with docker-compose, but is if you move outside it.
+COPY ./ ./
+
+CMD ["yarn", "start"]
