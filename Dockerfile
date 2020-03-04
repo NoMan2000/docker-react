@@ -1,0 +1,19 @@
+FROM node:alpine as builder
+
+WORKDIR '/app'
+
+RUN apk add --update yarn
+RUN apk add --update htop
+RUN apk add --update curl
+
+COPY package.json ./
+
+RUN yarn --production=true
+# Not necessary with docker-compose, but is if you move outside it.
+COPY ./ ./
+
+CMD ["yarn", "build"]
+
+FROM nginx as server
+EXPOSE 80
+COPY --from=builder /app/build /usr/share/nginx/html
