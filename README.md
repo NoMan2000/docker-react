@@ -70,3 +70,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 # docker-react
 
 This is a series of scripts that push to Travis-CI and then run other commands to test and deploy the code.
+
+From Travis, it deploys to AWS ElasticBean.
