@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true noman2000/docker-react yarn test --coverage
+
+deploy:
+  edge: true # Use the most recent version if it has a problem
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "react-docker"
+  env: "ReactDocker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-464663576252"
+  bucket_path: "react-docker"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  on:
+    branch: master
